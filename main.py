@@ -19,4 +19,23 @@ def hendle_message(message):
     with open(file_path, 'rb') as photo:
         bot.send_photo(message.chat.id, photo)
 
+
+# Handle '/start'
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    bot.reply_to(message, """\
+привет напиши /help
+""")
+
+# Handle '/help'
+@bot.message_handler(commands=['help'])
+def send_welcome(message):
+    bot.reply_to(message, """\
+И так что же я могу тебе
+предложить...минутку...Ах-точно
+вспомнил я могу замазовать лица...
+Просто пришли мне картинку на которой 
+есть лицо челловека и я его замажу\
+""")
+
 bot.polling()
