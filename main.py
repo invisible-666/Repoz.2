@@ -1,5 +1,6 @@
 import telebot
 from logik import Text2ImageAPI
+import time
 from config import TOKEN, API_KEY, SECRET_KEY
 
 bot = telebot.TeleBot(TOKEN)
@@ -24,12 +25,20 @@ def hendle_message(message):
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     bot.reply_to(message, """\
+Подождите бот пишет ответ\
+""")
+    time.sleep(2)
+    bot.reply_to(message, """\
 привет напиши /help
 """)
 
 # Handle '/help'
 @bot.message_handler(commands=['help'])
 def send_welcome(message):
+    bot.reply_to(message, """\
+Подождите бот пишет ответ\
+""")
+    time.sleep(2)
     bot.reply_to(message, """\
 И так что же я могу тебе
 предложить...минутку...Ах-точно
