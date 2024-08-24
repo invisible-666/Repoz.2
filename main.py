@@ -18,7 +18,14 @@ def hendle_message(message):
     api.save_image(images, file_path)
 
     with open(file_path, 'rb') as photo:
+        bot.send_message("""\
+        Генерирую картинку...\
+        """)
+        time.sleep(2)
+        bot.delete_message(chat_id=chat_id, message_id=message_id)
         bot.send_photo(message.chat.id, photo)
+        
+
 
 # Handle '/start'
 @bot.message_handler(commands=['start'])
