@@ -57,7 +57,6 @@ class Text2ImageAPI:
 
             attempts -= 1
             time.sleep(delay)
-
     
     def save_image(self, base64_string, file_path):
         # Декодируем строку Base64 в бинарные данные

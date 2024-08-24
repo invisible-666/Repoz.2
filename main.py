@@ -20,7 +20,6 @@ def hendle_message(message):
     with open(file_path, 'rb') as photo:
         bot.send_photo(message.chat.id, photo)
 
-
 # Handle '/start'
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
